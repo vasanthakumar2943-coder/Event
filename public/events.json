@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Wedding Decoration",
+    "price": 15000,
+    "image": "https://picsum.photos/seed/wed/600/400"
+  },
+  {
+    "id": 2,
+    "name": "Birthday Party",
+    "price": 8000,
+    "image": "https://picsum.photos/seed/bday/600/400"
+  },
+  {
+    "id": 3,
+    "name": "Corporate Event",
+    "price": 20000,
+    "image": "https://picsum.photos/seed/corp/600/400"
+  }
+]
