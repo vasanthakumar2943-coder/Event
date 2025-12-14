@@ -11,17 +11,17 @@ export default function Events() {
 
   /* Load events */
   useEffect(() => {
-  fetch("/events.json")
-    .then(r => r.json())
-    .then(d => setEvents(d || []));
-}, []);
+    fetch("/events.json")
+      .then((r) => r.json())
+      .then((d) => setEvents(d || []));
+  }, []);
 
-useEffect(() => {
-  fetch("/bookings.json")
-    .then(r => r.json())
-    .then(d => setBookings(d || []));
-}, []);
-
+  /* Load bookings (json-server) */
+  useEffect(() => {
+    fetch("http://localhost:5000/bookings")
+      .then((r) => r.json())
+      .then((d) => setBookings(d || []));
+  }, []);
 
   /* Close popup on outside click */
   useEffect(() => {
@@ -58,38 +58,47 @@ useEffect(() => {
     );
   };
 
-  /* Confirm booking */
-  const confirmBooking = async (event) => {
-    const booking = {
-      eventId: event.id,
-      eventName: event.name,
-      date: selectedDate.toISOString(),
-      createdAt: new Date().toISOString(),
-    };
+  /* ✅ CONFIRM BOOKING (FINAL SAFE LOGIC) */
+  const confirmBooking = (event) => {
+    if (!selectedDate) {
+      alert("Please select a date");
+      return;
+    }
 
-    await fetch("http://localhost:5000/bookings", {
+    // WhatsApp message (NO %0A)
+    const msg =
+      `Hi Praba Events,\n` +
+      `Booking request:\n` +
+      `Event: ${event.name}\n` +
+      `Date: ${selectedDate.toDateString()}`;
+
+    // ✅ WhatsApp redirect (never blocked)
+    window.location.href =
+      `https://wa.me/919876543210?text=${encodeURIComponent(msg)}`;
+
+    // ✅ Save booking (non-blocking)
+    fetch("http://localhost:5000/bookings", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(booking),
+      body: JSON.stringify({
+        eventId: event.id,
+        eventName: event.name,
+        date: selectedDate.toISOString(),
+        createdAt: new Date().toISOString(),
+      }),
     });
 
-    const msg = `Hi Praba Events,%0ABooking request:%0AEvent: ${event.name}%0ADate: ${selectedDate.toDateString()}`;
-    window.open(`https://wa.me/919876543210?text=${msg}`, "_blank");
-
-    alert("Booking confirmed!");
     setOpenId(null);
   };
 
   return (
     <div className="container">
-
       <section className="section">
         <h2 className="section-title">All Events</h2>
 
         <div className="grid">
           {events.map((item) => (
             <div key={item.id} className="card">
-
               <img src={item.image} alt={item.name} />
 
               {isEventBooked(item.id) ? (
@@ -111,7 +120,10 @@ useEffect(() => {
               </button>
 
               {openId === item.id && (
-                <div ref={popupRef} className="booking-popup-float animate">
+                <div
+                  ref={popupRef}
+                  className="booking-popup-float animate"
+                >
                   <button
                     className="popup-close"
                     onClick={() => setOpenId(null)}
@@ -134,12 +146,10 @@ useEffect(() => {
                   </button>
                 </div>
               )}
-
             </div>
           ))}
         </div>
       </section>
-
     </div>
   );
 }
