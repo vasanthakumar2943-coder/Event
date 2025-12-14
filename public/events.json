@@ -1,20 +1,56 @@
 [
   {
     "id": 1,
-    "name": "Wedding Decoration",
-    "price": 15000,
-    "image": "https://picsum.photos/seed/wed/600/400"
+    "name": "Engagement",
+    "price": 6000,
+    "image": "/images/Meraige.jpeg"
   },
   {
     "id": 2,
-    "name": "Birthday Party",
-    "price": 8000,
-    "image": "https://picsum.photos/seed/bday/600/400"
+    "name": "Church",
+    "price": 5000,
+    "image": "/images/Curch.jpeg"
   },
   {
     "id": 3,
-    "name": "Corporate Event",
-    "price": 20000,
-    "image": "https://picsum.photos/seed/corp/600/400"
+    "name": "Reception",
+    "price": 8000,
+    "image": "/images/Primium.jpeg"
+  },
+  {
+    "id": 4,
+    "name": "Marriage",
+    "price": 8000,
+    "image": "/images/meraige.jpeg"
+  },
+  {
+    "id": 5,
+    "name": "Simantham",
+    "price": 8000,
+    "image": "/images/simantham.jpeg"
+  },
+  {
+    "id": 6,
+    "name": "Birthday",
+    "price": 8000,
+    "image": "/images/Birth_day_Boy.jpeg"
+  },
+  {
+    "id": 7,
+    "name": "Birthday",
+    "price": 8000,
+    "image": "/images/Birth_day_Boy2.jpeg"
+  },
+  {
+    "id": 8,
+    "name": "Birthday",
+    "price": 8000,
+    "image": "/images/Birth_day_G.jpeg"
+  },
+  {
+    "id": 9,
+    "name": "Marriage",
+    "price": 8000,
+    "image": "/images/meraige.jpeg"
   }
 ]

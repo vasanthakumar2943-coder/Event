@@ -1,25 +1,32 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="container footer-content">
-        
+
+        {/* ===== BRAND ===== */}
         <div className="footer-section">
           <h3>Praba Events</h3>
           <p>
-            Modern, stylish event planning for weddings, birthdays & corporate events.
+            Modern, stylish event planning for weddings, birthdays and corporate
+            events with premium designs and professional execution.
           </p>
         </div>
 
+        {/* ===== QUICK LINKS ===== */}
         <div className="footer-section">
           <h3>Quick Links</h3>
-          <a href="/">Home</a>
-          <a href="/events">Events</a>
-          <a href="/gallery">Gallery</a>
-          <a href="/contact">Contact</a>
+          <Link to="/">Home</Link>
+          <Link to="/events">Events</Link>
+          <Link to="/services">Services</Link>
+          <Link to="/gallery">Gallery</Link>
+          <Link to="/designers">Designers</Link>
+          <Link to="/contact">Contact</Link>
         </div>
 
+        {/* ===== CONTACT ===== */}
         <div className="footer-section">
           <h3>Contact Info</h3>
           <p>📞 +91 98765 43210</p>
@@ -30,7 +37,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        © 2025 Praba Events — All Rights Reserved
+        © {new Date().getFullYear()} Praba Events — All Rights Reserved
       </div>
     </footer>
   );

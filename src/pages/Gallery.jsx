@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
 const galleryItems = [
-  { id: 1, type: "image", src: "https://picsum.photos/seed/m1/800/600" },
-  { id: 2, type: "image", src: "https://picsum.photos/seed/m2/600/900" },
-  { id: 3, type: "image", src: "https://picsum.photos/seed/m3/800/500" },
-  { id: 4, type: "image", src: "https://picsum.photos/seed/m4/500/800" },
-  { id: 5, type: "image", src: "https://picsum.photos/seed/m5/900/600" },
+  { id: 1, type: "image", src: "/images/Meraige.jpeg" },
+  { id: 2, type: "image", src: "/images/meraige.jpeg" },
+  { id: 3, type: "image", src: "/images/Curch.jpeg" },
+  { id: 4, type: "image", src: "/images/simantham.jpeg" },
+  { id: 5, type: "image", src: "/images/home.jpeg" },
   { id: 6, type: "video", src: "https://www.w3schools.com/html/mov_bbb.mp4" },
 ];
 

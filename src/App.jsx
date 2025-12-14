@@ -1,9 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+
 /* Components */
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
+
 
 /* Pages */
 import Home from "./pages/Home";
@@ -19,7 +22,11 @@ import BookingForm from "./components/BookingForm";
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
+
+      
       <Navbar />
+      
 
       <Routes>
         {/* Main Pages */}

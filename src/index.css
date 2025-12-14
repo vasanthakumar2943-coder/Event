@@ -28,7 +28,7 @@ body{
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
   background: radial-gradient(circle at 10% 10%, #06202e 0%, var(--bg-1) 20%, var(--bg-2) 100%);
   color: var(--white);
-  padding-top: 25px; /* 🔹 space for fixed navbar */
+  padding-top: 0px; /* 🔹 space for fixed navbar */
 }
 
 /* =========================
@@ -44,7 +44,7 @@ body{
    SECTION GAP (NEW – SAFE)
 ========================= */
 .section{
-  margin-top: 40px;
+  margin-top: 25px;
 
 }
 .section h2,
@@ -112,12 +112,12 @@ body{
   padding:14px 18px;
   border-radius:14px;
   border:1px solid rgba(255,255,255,0.04);
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.164), rgba(0, 0, 0, 0.541));
   backdrop-filter: blur(10px);
 
   /* 🔹 fixed navbar */
   position: fixed;
-  top: 16px;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 32px);
@@ -134,7 +134,7 @@ body{
 ================================ */
 
 .nav-link {
-  color: var(--muted);
+  color: white;
   text-decoration: none;
   padding: 8px 12px;
   border-radius: 8px;

@@ -1,6 +1,61 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+/* EVENTS PREVIEW */
+const eventPreview = [
+  {
+    id: 1,
+    name: "Wedding Event",
+    price: "₹50,000",
+    image: "/images/meraige.jpeg",
+  },
+  {
+    id: 2,
+    name: "Birthday Party",
+    price: "₹12,000",
+    image: "/images/Birth_day_Boy.jpeg",
+  },
+  {
+    id: 3,
+    name: "Corporate Event",
+    price: "₹30,000",
+    image: "/images/Primium.jpeg",
+  },
+];
+
+/* SERVICES PREVIEW */
+const servicesPreview = [
+  {
+    id: 1,
+    title: "Stage Decorations",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRut64Uhx-yGfz7UiC9RMzjdJmo5CqLGrZSUg&s",
+  },
+  {
+    id: 2,
+    title: "Teddy Costume",
+    image:
+      "https://i.pinimg.com/736x/f1/78/11/f1781129d81f070470a4e8715370cbfa.jpg",
+  },
+  {
+    id: 3,
+    title: "Lights",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCGRVy92fqhPHeSo4LkPcWhq_JpEzJzjyi7w&s",
+  },
+];
+
+/* GALLERY PREVIEW */
+const galleryPreview = [
+  { id: 1, src: "/images/Meraige.jpeg" },
+  { id: 2, src: "/images/meraige.jpeg" },
+  { id: 3, src: "/images/Curch.jpeg" },
+   { id: 4, src: "/images/home.jpeg" },
+    { id: 5, src: "/images/Primium.jpeg" },
+     { id: 6, src: "/images/simantham.jpeg" },
+      { id: 7, src: "/images/Birth_day_G.jpeg" },
+];
+
 export default function Home() {
   const navigate = useNavigate();
 
@@ -39,33 +94,54 @@ export default function Home() {
 
           <div>
             <img
-              src="https://picsum.photos/seed/hero/600/400"
+              src="/images/home.jpeg"
               alt="Event decoration"
-              style={{ borderRadius: 14, width: "100%" }}
+              style={{ borderRadius: 14, width: "100%", height: "500px" }}
             />
           </div>
         </div>
       </section>
 
-      {/* ================= SERVICES ================= */}
+      {/* ================= EVENTS PREVIEW ================= */}
+      <section className="section">
+        <h2 className="section-title">Upcoming Events</h2>
+        <p className="section-subtitle">
+          Popular events planned by Praba Events
+        </p>
+
+        <div className="grid">
+          {eventPreview.map((event) => (
+            <div className="card" key={event.id}>
+              <img src={event.image} alt={event.name} className="card-img" />
+              <h3>{event.name}</h3>
+              <p style={{ color: "var(--accent)", fontWeight: 600 }}>
+                {event.price}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div style={{ marginTop: 18, textAlign: "center" }}>
+          <button
+            className="btn-secondary"
+            onClick={() => navigate("/events")}
+          >
+            View All Events
+          </button>
+        </div>
+      </section>
+
+      {/* ================= SERVICES PREVIEW ================= */}
       <section className="section">
         <h2 className="section-title">Our Services</h2>
 
         <div className="grid">
-          <div className="card">
-            <h3>Wedding Decoration</h3>
-            <p className="price">Premium stage & floral setup</p>
-          </div>
-
-          <div className="card">
-            <h3>Birthday Parties</h3>
-            <p className="price">Theme-based decorations</p>
-          </div>
-
-          <div className="card">
-            <h3>Corporate Events</h3>
-            <p className="price">Professional branding & setup</p>
-          </div>
+          {servicesPreview.map((service) => (
+            <div className="card" key={service.id}>
+              <img src={service.image} alt={service.title} className="card-img" />
+              <h3>{service.title}</h3>
+            </div>
+          ))}
         </div>
 
         <div style={{ marginTop: 18, textAlign: "center" }}>
@@ -78,54 +154,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= WHY CHOOSE ================= */}
-      <section className="section">
-        <h2 className="section-title">Why Choose Praba Events</h2>
-
-        <div className="grid">
-          <div className="card">
-            <h3>Experienced Team</h3>
-            <p className="price">
-              Skilled designers with years of event experience.
-            </p>
-          </div>
-
-          <div className="card">
-            <h3>Premium Quality</h3>
-            <p className="price">
-              High-quality materials and elegant designs.
-            </p>
-          </div>
-
-          <div className="card">
-            <h3>On-Time Delivery</h3>
-            <p className="price">
-              We execute events perfectly, always on schedule.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* ================= GALLERY PREVIEW ================= */}
       <section className="section">
         <h2 className="section-title">Gallery Highlights</h2>
 
-        <div className="grid">
-          <img
-            src="https://picsum.photos/seed/gallery1/400/300"
-            alt=""
-            style={{ borderRadius: 12, width: "100%" }}
-          />
-          <img
-            src="https://picsum.photos/seed/gallery2/400/300"
-            alt=""
-            style={{ borderRadius: 12, width: "100%" }}
-          />
-          <img
-            src="https://picsum.photos/seed/gallery3/400/300"
-            alt=""
-            style={{ borderRadius: 12, width: "100%" }}
-          />
+        <div className="masonry">
+          {galleryPreview.map((item) => (
+            <div key={item.id} className="masonry-item">
+              <img
+                src={item.src}
+                alt="Gallery preview"
+              />
+            </div>
+          ))}
         </div>
 
         <div style={{ marginTop: 18, textAlign: "center" }}>
@@ -138,38 +179,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= TESTIMONIALS ================= */}
-      <section className="section">
-        <h2 className="section-title">What Our Clients Say</h2>
-
-        <div className="grid">
-          <div className="card">
-            <p className="price">
-              “Amazing decoration and perfect execution. Our wedding was
-              unforgettable!”
-            </p>
-            <strong>- Anitha</strong>
-          </div>
-
-          <div className="card">
-            <p className="price">
-              “Professional team, beautiful designs and on-time delivery.”
-            </p>
-            <strong>- Rajesh</strong>
-          </div>
-
-          <div className="card">
-            <p className="price">
-              “Best event planners in Chennai. Highly recommended.”
-            </p>
-            <strong>- Priya</strong>
-          </div>
-        </div>
-      </section>
-
       {/* ================= CTA ================= */}
       <section className="section">
-        <div className="card" style={{ textAlign: "center" }}>
+        <div style={{ textAlign: "center" }}>
           <h2>Ready to Plan Your Event?</h2>
           <p className="price">
             Let us turn your ideas into unforgettable moments.
