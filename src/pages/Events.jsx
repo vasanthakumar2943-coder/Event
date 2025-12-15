@@ -74,7 +74,7 @@ export default function Events() {
 
     // ✅ WhatsApp redirect (never blocked)
     window.location.href =
-      `https://wa.me/919876543210?text=${encodeURIComponent(msg)}`;
+      `https://wa.me/917449292910?text=${encodeURIComponent(msg)}`;
 
     // ✅ Save booking (non-blocking)
     fetch("http://localhost:5000/bookings", {

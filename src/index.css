@@ -207,7 +207,7 @@ body{
 .card{
   position: relative;
   background: var(--card);
-  height: 385px;
+  height: 400px;
   padding:14px;
   border-radius:12px;
   border:1px solid rgba(255,255,255,0.03);
@@ -302,8 +302,8 @@ body{
 ========================= */
 .status{
   position:absolute;
-  top:12px;
-  left:12px;
+  top:-2px;
+  left:-2px;
   padding:6px 12px;
   border-radius:999px;
   font-size:13px;
@@ -448,6 +448,7 @@ body{
   color: var(--accent);
   font-weight: 600;
   margin-bottom: 10px;
+  line-height: 1.05;
 }
 
 
@@ -470,6 +471,33 @@ body{
   transform: scale(1.05);
   transition: 0.3s ease;
 }
+
+/* ===============================
+   SERVICES CARD – MOBILE FIX
+================================ */
+
+
+@media (max-width: 600px) {
+  .card {
+    height: auto;              
+    min-height: unset;
+    padding-bottom: 18px;
+  }
+
+  
+  .card p {
+    line-height: 1.45;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  
+  .card img {
+    height: 200px;
+    object-fit: cover;
+  }
+}
+
 
 /* ===============================
    MASONRY GALLERY
