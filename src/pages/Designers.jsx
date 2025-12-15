@@ -3,23 +3,23 @@ import React from "react";
 const designers = [
   {
     id: 1,
-    name: "Praba Kumar",
+    name: "Praba",
     role: "Creative Director",
-    image: "https://picsum.photos/seed/designer1/400/400",
+    image: "/images/Praba.jpeg",
     skills: ["Wedding Design", "Stage Decoration", "Premium Themes"],
   },
   {
     id: 2,
-    name: "Anitha Raj",
+    name: "Sam",
     role: "Event Stylist",
-    image: "https://picsum.photos/seed/designer2/400/400",
+    image: "/images/Sam.jpeg",
     skills: ["Birthday Themes", "Floral Decor", "Lighting Concepts"],
   },
   {
     id: 3,
-    name: "Karthik V",
+    name: "Pozhi",
     role: "Corporate Designer",
-    image: "https://picsum.photos/seed/designer3/400/400",
+    image: "/images/Pozhi.jpeg",
     skills: ["Corporate Events", "Branding Setup", "Stage Layouts"],
   },
 ];
@@ -41,12 +41,6 @@ export default function Designers() {
               <img
                 src={d.image}
                 alt={d.name}
-                style={{
-                  borderRadius: "50%",
-                  width: 120,
-                  height: 120,
-                  margin: "10px auto",
-                }}
               />
 
               <h3>{d.name}</h3>

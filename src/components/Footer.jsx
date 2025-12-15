@@ -29,7 +29,7 @@ export default function Footer() {
         {/* ===== CONTACT ===== */}
         <div className="footer-section">
           <h3>Contact Info</h3>
-          <p>📞 +91 98765 43210</p>
+          <p>📞 +91 74492 92910</p>
           <p>📧 prabaevents@gmail.com</p>
           <p>📍 Chennai, Tamil Nadu</p>
         </div>

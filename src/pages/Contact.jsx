@@ -60,7 +60,7 @@ export default function Contact() {
 
               <a
                 className="whatsapp-btn"
-                href="https://wa.me/919876543210?text=Hi%20Praba%20Events,%20I%20need%20more%20details"
+                href="https://wa.me/917449292910?text=Hi%20Praba%20Events,%20I%20need%20more%20details"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -73,7 +73,7 @@ export default function Contact() {
           <div className="contact-info-card">
             <h3>Reach Us</h3>
 
-            <p>📞 +91 98765 43210</p>
+            <p>📞 +91 74492 92910</p>
             <p>📧 prabaevents@gmail.com</p>
             <p>📍 Chennai, Tamil Nadu</p>
 

@@ -13,7 +13,7 @@ export default function BookingForm() {
   const [loading, setLoading] = useState(true);
   const [sending, setSending] = useState(false);
 
-  /* ✅ DEMO: Load event from public/events.json */
+  
   useEffect(() => {
     setLoading(true);
 
@@ -46,7 +46,7 @@ export default function BookingForm() {
 
     setSending(true);
 
-    /* ✅ DEMO booking (no backend) */
+   
     alert("Demo booking submitted!");
 
     const msg =
@@ -58,7 +58,7 @@ export default function BookingForm() {
       `Phone: ${form.phone}`;
 
     window.open(
-      `https://wa.me/919876543210?text=${msg}`,
+      `https://wa.me/917449292910?text=${msg}`,
       "_blank"
     );
 
